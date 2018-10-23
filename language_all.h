@@ -569,4 +569,9 @@ extern const char* const WELCOME_MSG_LANG_TABLE[LANG_NUM];
 extern char* CAT2(const char *s1,const char *s2);
 extern char* CAT4(const char *s1,const char *s2,const char *s3,const char *s4);
 
+extern const char* const MSG_CHANGE_TOOL_LANG_TABLE[LANG_NUM];
+#define MSG_CHANGE_TOOL LANG_TABLE_SELECT(MSG_CHANGE_TOOL_LANG_TABLE)
+extern const char* const MSG_ADJUST_TOOL_HEIGHT_LANG_TABLE[LANG_NUM];
+#define MSG_ADJUST_TOOL_HEIGHT LANG_TABLE_SELECT(MSG_ADJUST_TOOL_HEIGHT_LANG_TABLE)
+
 #endif //LANGUAGE_ALL.H

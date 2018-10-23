@@ -2922,3 +2922,26 @@ char* CAT4(const char *s1,const char *s2,const char *s3,const char *s4) {
   strncpy_P(langbuffer+len,s4,LCD_WIDTH-len);
   return langbuffer;
 }
+
+
+const char MSG_CHANGE_TOOL_EN[] PROGMEM = "Change the tool and clamp it in a proper position. The clamping mechanism can be adjusted by rotating the knob. Confirm by pressing the button.";
+const char MSG_CHANGE_TOOL_DE[] PROGMEM = "Wechseln Sie jetzt das Tool und sperren Sie es in eine geeignete Position. Der Sperrmechanismus kann durch Drehung des Knopfes justiert werden. Bestaetigen Sie den Wechsel mittels Knopfdruck.";
+const char * const MSG_CHANGE_TOOL_LANG_TABLE[LANG_NUM] PROGMEM = {
+	MSG_CHANGE_TOOL_EN,
+	MSG_CHANGE_TOOL_EN,
+	MSG_CHANGE_TOOL_EN,
+	MSG_CHANGE_TOOL_EN,
+	MSG_CHANGE_TOOL_EN,
+	MSG_CHANGE_TOOL_DE
+};
+
+const char MSG_ADJUST_TOOL_HEIGHT_EN[] PROGMEM = "Now adjust the tool by rotating the knob until the tool's tip is just right above the bed. Confirm by pressing the knob.";
+const char MSG_ADJUST_TOOL_HEIGHT_DE[] PROGMEM = " Sie jetzt das Tool und bestaetigen Sie den Wechsel mit einem Druck auf den Knopf.";
+const char * const MSG_ADJUST_TOOL_HEIGHT_LANG_TABLE[LANG_NUM] PROGMEM = {
+	MSG_ADJUST_TOOL_HEIGHT_EN,
+	MSG_ADJUST_TOOL_HEIGHT_EN,
+	MSG_ADJUST_TOOL_HEIGHT_EN,
+	MSG_ADJUST_TOOL_HEIGHT_EN,
+	MSG_ADJUST_TOOL_HEIGHT_EN,
+	MSG_ADJUST_TOOL_HEIGHT_DE
+};

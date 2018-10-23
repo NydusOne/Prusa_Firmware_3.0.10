@@ -43,7 +43,7 @@ void lcd_mylang();
   static bool lcd_selfcheck_pulleys(int axis);
 
   extern const char* lcd_display_message_fullscreen_P(const char *msg, uint8_t &nlines);
-  inline const char* lcd_display_message_fullscreen_P(const char *msg) 
+  inline const char* lcd_display_message_fullscreen_P(const char *msg)
     { uint8_t nlines; return lcd_display_message_fullscreen_P(msg, nlines); }
 
   extern void lcd_wait_for_click();
@@ -74,6 +74,8 @@ void lcd_mylang();
   #define LCD_UPDATE_INTERVAL 100
   #define LCD_TIMEOUT_TO_STATUS 15000
 
+ extern void lcd_move_e();
+
   #ifdef ULTIPANEL
   void lcd_buttons_update();
   extern volatile uint8_t buttons;  //the last checked buttons in a bit array.
@@ -93,24 +95,24 @@ void lcd_mylang();
 
   extern unsigned long lcd_timeoutToStatus;
   extern int lcd_commands_type;
-  
+
   extern bool farm_mode;
   extern int farm_no;
   extern int farm_timer;
   extern int farm_status;
 
   extern bool cancel_heatup;
-  
+
   #ifdef FILAMENT_LCD_DISPLAY
         extern unsigned long message_millis;
   #endif
-    
+
   void lcd_buzz(long duration,uint16_t freq);
   bool lcd_clicked();
 
   void lcd_ignore_click(bool b=true);
   void lcd_commands();
-  
+
   #ifdef NEWPANEL
     #define EN_C (1<<BLEN_C)
     #define EN_B (1<<BLEN_B)
@@ -146,12 +148,12 @@ void lcd_mylang();
     #define B_ST (1<<BL_ST)
     #define EN_B (1<<BLEN_B)
     #define EN_A (1<<BLEN_A)
-    
+
     #define LCD_CLICKED ((buttons&B_MI)||(buttons&B_ST))
   #endif//NEWPANEL
 
 #else //no LCD
-  FORCE_INLINE void 
+  FORCE_INLINE void
   {}
   FORCE_INLINE void lcd_init() {}
   FORCE_INLINE void lcd_setstatus(const char* message) {}
@@ -160,8 +162,8 @@ void lcd_mylang();
   FORCE_INLINE void lcd_buzz(long duration,uint16_t freq) {}
   FORCE_INLINE bool lcd_detected(void) { return true; }
 
-  #define LCD_MESSAGEPGM(x) 
-  #define LCD_ALERTMESSAGEPGM(x) 
+  #define LCD_MESSAGEPGM(x)
+  #define LCD_ALERTMESSAGEPGM(x)
 
 #endif //ULTRA_LCD
 
